@@ -1,5 +1,5 @@
 import React from 'react';
-import './ShelfProduct.less';
+import './style.less';
 import { Link, History } from 'react-router';
 import { stores } from 'sdk';
 
