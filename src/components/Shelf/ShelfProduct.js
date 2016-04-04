@@ -11,7 +11,7 @@ class Product extends React.Component {
   _handleDetails = (ev) => {
     ev.preventDefault();
     history.pushState(null, `/${this.props.slug}/p`);
-  }
+  };
 
   render() {
     let display = this.props.isVisible ? 'block' : 'none';
