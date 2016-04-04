@@ -1,7 +1,9 @@
 import { editable } from 'vtex-editor';
 import React from 'react';
-import ShelfPlaceholder from './ShelfPlaceholder/ShelfPlaceholder';
-import ShelfSlider from './ShelfSlider/ShelfSlider';
+import './Shelf.less';
+import './ShelfCustom.less';
+import ShelfPlaceholder from './ShelfPlaceholder';
+import ShelfSlider from './ShelfSlider';
 
 @editable({
   name: 'Shelf@vtex.shelf',

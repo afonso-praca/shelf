@@ -1,0 +1,32 @@
+@themes: '../../utils/';
+@import '@{themes}/theme-variables';
+
+.v-arrow-icon {
+  fill: none;
+  stroke: @secondary-color !important;
+
+  &[data-is-disabled=true] {
+    stroke: #eee !important;
+  }
+
+  &:active:not([data-is-disabled=true]) {
+    stroke-width: 4;
+    stroke: @dark-color !important;
+  }
+}
+
+.v-shelf__title {
+  display: none !important;
+}
+
+.v-shelf__products {
+  position: relative;
+  height: auto !important;
+  padding-top: 2px;
+}
+
+.v-arrow {
+  position: relative;
+  padding-top: 60px !important;
+  padding-bottom: 10px !important;
+}
