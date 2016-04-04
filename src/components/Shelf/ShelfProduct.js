@@ -1,5 +1,6 @@
 import React from 'react';
 import './ShelfProduct.less';
+import './ShelfProductCustom.less';
 import { stores, history } from 'sdk';
 
 const Link = stores.ComponentStore.state.getIn(['Link@vtex.storefront-sdk', 'constructor']);
@@ -21,24 +22,24 @@ class Product extends React.Component {
 
     return (
       <div className="v-shelf__product row" style={{display: display}}>
-        <div className="col-xs-12">
+        <Link to={`/${this.props.slug}/p`} className="col-xs-12">
           <div className="row">
             <Img className="v-shelf__product-photo col-xs-12" src={imageUrl} width={200} height={235}/>
           </div>
           <div className="row">
-            <Link to={`/${this.props.slug}/p`} className="v-shelf__product-title col-xs-12">{name}</Link>
+            <div className="v-shelf__product-title col-xs-12">{name}</div>
           </div>
           <div className="row">
             <p className="v-shelf__product-price col-xs-12">
               <Price value={price}/>
             </p>
           </div>
-          <div className="row">
+          <div className="row v-shelf__product-btn-row">
             <button className="v-shelf__product-btn btn col-xs-12" onTouchTap={this._handleDetails.bind(this)}>
-              Ver detalhes
+              Ver detalhes !!!!
             </button>
           </div>
-        </div>
+        </Link>
       </div>
     );
   }
