@@ -3,7 +3,7 @@ import ShelfEditor from './ShelfEditor/ShelfEditor';
 
 let components = [
   {
-    name: 'ShelfEditor@vtex.shelf',
+    name: 'ShelfEditor@pilateslovers.shelf',
     constructor: ShelfEditor
   }
 ];

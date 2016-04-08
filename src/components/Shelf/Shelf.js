@@ -6,7 +6,7 @@ import ShelfPlaceholder from './ShelfPlaceholder';
 import ShelfSlider from './ShelfSlider';
 
 @editable({
-  name: 'Shelf@vtex.shelf',
+  name: 'Shelf@pilateslovers.shelf',
   title: 'Shelf'
 })
 class Shelf extends React.Component {

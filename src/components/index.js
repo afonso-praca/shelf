@@ -4,7 +4,7 @@ import Shelf from './Shelf/Shelf';
 
 let components = [
   {
-    name: 'Shelf@vtex.shelf',
+    name: 'Shelf@pilateslovers.shelf',
     constructor: Shelf
   }
 ];
