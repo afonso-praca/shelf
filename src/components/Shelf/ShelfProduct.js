@@ -35,7 +35,7 @@ class Product extends React.Component {
             </p>
           </div>
           <div className="row v-shelf__product-btn-row">
-            <button className="v-shelf__product-btn btn col-xs-12" onTouchTap={this._handleDetails.bind(this)}>
+            <button className="v-shelf__product-btn btn col-xs-12" onClick={this._handleDetails.bind(this)}>
               Ver detalhes !!!!
             </button>
           </div>
