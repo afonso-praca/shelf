@@ -78,9 +78,11 @@ class Product extends React.Component {
           <Link to={`/${this.props.slug}/p`} className="ShelfProduct__title row">
             { name }
           </Link>
-          <span className="ShelfProduct__price">
-            <Price value={price}/>
-          </span>
+          <Link to={`/${this.props.slug}/p`}>
+            <span className="ShelfProduct__price">
+              <Price value={price}/>
+            </span>
+          </Link>
           <button
             className="ShelfProduct__btn"
             onClick={this._handleDetails}
