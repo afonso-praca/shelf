@@ -109,9 +109,7 @@ class ShelfSlider extends React.Component {
     return (
       <div>
         <div className="ShelfSlider__section">
-          <h2>
-            <span className="ShelfSlider__title">{title}</span>
-          </h2>
+          <span className="ShelfSlider__title">{title}</span>
           {link}
         </div>
         <div className="ShelfSlider clearfix">
