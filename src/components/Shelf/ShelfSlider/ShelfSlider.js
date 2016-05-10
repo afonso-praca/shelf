@@ -7,6 +7,8 @@ import ShelfProduct from '../ShelfProduct/ShelfProduct';
 import 'utils/slick/slick.less';
 import 'utils/slick/slick-theme.less';
 
+const Link = stores.ComponentStore.getState().getIn(['Link@vtex.storefront-sdk', 'constructor']);
+
 const getSearchParams = (settings) => {
   return Immutable.Map({
     category: settings.get('category'),
@@ -61,6 +63,17 @@ class ShelfSlider extends React.Component {
     const title = this.props.settings.get('title') || '';
     const desktopSlidesQty = desktopQty ? desktopQty : 4;
     const tabletSlidesQty = tabletQty ? tabletQty : 2;
+    const category = this.props.settings.get('category');
+    const path = category ? '/' + category.toLowerCase().replace(/ /g, '-') + '/c': null;
+    const link = path ?
+      (
+        <Link to={path}>
+          <span className="ShelfSlider__detail">
+            Ver todos
+          </span>
+        </Link>
+      ) :
+      null;
 
     const slickSettings = {
       dots: false,
@@ -93,24 +106,29 @@ class ShelfSlider extends React.Component {
     };
 
     return (
-      <div className="ShelfSlider clearfix">
-        <h2 className="ShelfSlider__title row-fluid">
-          { title }
-        </h2>
-        <div className="row-fluid">
-          <Slider {...slickSettings}>
-            {
-              products ?
-                products.map(product => {
-                  return (
-                    <div key={product.slug}>
-                      <ShelfProduct {...product} />
-                    </div>
-                  );
-                }) :
-                <div>Carregando</div>
-            }
-          </Slider>
+      <div>
+        <div className="ShelfSlider__section">
+          <h2>
+            <span className="ShelfSlider__title">{title}</span>
+          </h2>
+          {link}
+        </div>
+        <div className="ShelfSlider clearfix">
+          <div className="row-fluid">
+            <Slider {...slickSettings}>
+              {
+                products ?
+                  products.map(product => {
+                    return (
+                      <div key={product.slug}>
+                        <ShelfProduct {...product} />
+                      </div>
+                    );
+                  }) :
+                  <div>Carregando</div>
+              }
+            </Slider>
+          </div>
         </div>
       </div>
     );
