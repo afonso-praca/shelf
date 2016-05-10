@@ -54,24 +54,40 @@
 
   &__section {
     padding: 0 15px;
-    margin: 15px;
+    margin: 15px 0 10px 0;
+  }
+
+  &__section-title {
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: @primary-color;
+    font-family: 'bebas_neuebold', 'sans-serif';
+    font-style: normal;
+  }
+
+  &__section-link {
+    display: inline-block;
+    margin-top: 4px;
+
+    a {
+      color: @secondary-color;
+    }
+  }
+
+  &__section-title + &__section-link {
+    padding-left: 8px;
   }
 
   &__detail {
-    color: #247bbd;
-    font-family: Arial, 'sans-serif';
-    font-size: 14px;
-    margin-left: 10px;
-  }
-
-  &__title {
-    font-size: 22px;
+    font-size: 18px;
     text-transform: uppercase;
     font-weight: bold;
     color: @secondary-color;
     font-family: 'bebas_neuebold', 'sans-serif';
     font-style: normal;
   }
+
 
   &__product-wrapper {
     padding-right: 0px;

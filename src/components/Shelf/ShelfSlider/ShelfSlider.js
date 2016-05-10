@@ -108,9 +108,13 @@ class ShelfSlider extends React.Component {
 
     return (
       <div>
-        <div className="ShelfSlider__section">
-          <span className="ShelfSlider__title">{title}</span>
-          {link}
+        <div className="ShelfSlider__section clearfix">
+          {
+            title ? (
+              <span className="ShelfSlider__section-title pull-left">{title}</span>
+            ) : ''
+          }
+          <div className="ShelfSlider__section-link pull-left">{link}</div>
         </div>
         <div className="ShelfSlider clearfix">
           <div className="row-fluid">
