@@ -57,21 +57,34 @@
     margin: 15px;
   }
 
-  &__detail {
-    color: #247bbd;
-    font-family: Arial, 'sans-serif';
-    font-size: 14px;
-    margin-left: 10px;
+  &__section-link {
+    display: inline-block;
+    float: right;
+
+    a {
+      color: @secondary-color;
+      text-decoration: underline;
+    }
   }
 
-  &__title {
+  &__section-title {
     font-size: 22px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: @primary-color;
+    font-family: 'bebas_neuebold', 'sans-serif';
+    font-style: normal;
+  }
+
+  &__detail {
+    font-size: 18px;
     text-transform: uppercase;
     font-weight: bold;
     color: @secondary-color;
     font-family: 'bebas_neuebold', 'sans-serif';
     font-style: normal;
   }
+
 
   &__product-wrapper {
     padding-right: 0px;
