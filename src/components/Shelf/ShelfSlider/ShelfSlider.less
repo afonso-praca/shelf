@@ -54,17 +54,7 @@
 
   &__section {
     padding: 0 15px;
-    margin: 15px;
-  }
-
-  &__section-link {
-    display: inline-block;
-    float: right;
-
-    a {
-      color: @secondary-color;
-      text-decoration: underline;
-    }
+    margin: 15px 0 10px 0;
   }
 
   &__section-title {
@@ -74,6 +64,19 @@
     color: @primary-color;
     font-family: 'bebas_neuebold', 'sans-serif';
     font-style: normal;
+  }
+
+  &__section-link {
+    display: inline-block;
+    margin-top: 4px;
+
+    a {
+      color: @secondary-color;
+    }
+  }
+
+  &__section-title + &__section-link {
+    padding-left: 8px;
   }
 
   &__detail {
