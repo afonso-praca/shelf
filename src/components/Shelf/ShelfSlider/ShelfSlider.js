@@ -24,7 +24,8 @@ class ShelfSlider extends React.Component {
   }
 
   static getPropsFromStores(props) {
-    const currentURL = (window.location.pathname + window.location.search);
+    const location = stores.ContextStore.getState().get('location');
+    const currentURL = location.pathname + location.search;
     const query = getSearchParams(props.settings);
     const searchStore = stores.SearchStore.getState();
     const results = searchStore.getIn([query, 'results']);
@@ -51,7 +52,7 @@ class ShelfSlider extends React.Component {
     if (!loading) {
       const results = searchStore.getIn([query, 'results']);
       if (!results) {
-        actions.SearchActions.requestSearch(query);
+        setTimeout(() => actions.SearchActions.requestSearch(query));
       }
     }
   }
