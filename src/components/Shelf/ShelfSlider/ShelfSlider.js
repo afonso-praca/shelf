@@ -39,12 +39,7 @@ class ShelfSlider extends React.Component {
     };
   }
 
-  shouldComponentUpdate() {
-    const loading = stores.ContextStore.getState().get('loading');
-    return !loading;
-  }
-
-  componentDidUpdate() {
+  componentDidMount() {
     const query = getSearchParams(this.props.settings);
     const searchStore = stores.SearchStore.getState();
     const loading = searchStore.getIn([query, 'loading']);
@@ -55,6 +50,11 @@ class ShelfSlider extends React.Component {
         setTimeout(() => actions.SearchActions.requestSearch(query));
       }
     }
+  }
+
+  shouldComponentUpdate() {
+    const loading = stores.ContextStore.getState().get('loading');
+    return !loading;
   }
 
   render() {
