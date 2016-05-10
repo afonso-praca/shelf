@@ -6,7 +6,11 @@
   overflow: auto;
 
   &__inner {
-    margin: 1em 1em 0em 1em;
+      padding: 15px 15px 90px 15px;
+
+      @media (min-width: @screen-sm-min) {
+        padding: 70px 15px 90px 15px;
+      }
   }
 
   &__field, &__text-field, &__quant-field {
