@@ -72,7 +72,7 @@ class ShelfEditor extends React.Component {
       <div className="ShelfEditor">
         <form className="ShelfEditor__inner" onSubmit={this.handleSave}>
           <div className="ShelfEditor__text-field">
-            <label htmlFor="shelf-title">Título</label>
+            <label htmlFor="shelf-title">Title</label>
             <input
               id="shelf-title"
               className="form-control"
@@ -80,11 +80,11 @@ class ShelfEditor extends React.Component {
               type="text"
               value={this.state.title}
               onChange={this.handleChange}
-              placeholder="Ex: Destaques, Promoção"
+              placeholder="Eg.: New Releases, Sales"
             />
           </div>
           <div className="ShelfEditor__text-field">
-            <label htmlFor="shelf-category">Categoria</label>
+            <label htmlFor="shelf-category">Category</label>
             <input
               id="shelf-category"
               className="form-control"
@@ -97,7 +97,7 @@ class ShelfEditor extends React.Component {
           </div>
           <div className="ShelfEditor__quant-field">
             <label htmlFor="shelf-quantity">
-              Quantidade de produtos total
+              Total of products displayed
             </label>
             <div className="ShelfEditor__quant-selector">
               <button
@@ -125,7 +125,7 @@ class ShelfEditor extends React.Component {
             </div>
             <br />
             <label htmlFor="shelf-quantity-desktop">
-              Quantidade de produtos para exibição (Desktop)
+              Number of products displayed (Desktop)
             </label>
             <div className="ShelfEditor__quant-selector">
               <select
@@ -142,7 +142,7 @@ class ShelfEditor extends React.Component {
             </div>
             <br />
             <label htmlFor="shelf-quantity-tablet">
-              Quantidade de produtos para exibição (Tablet)
+              Number of products displayed (Tablet)
             </label>
             <div className="ShelfEditor__quant-selector">
               <select
