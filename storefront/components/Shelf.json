@@ -6,7 +6,8 @@
       "queryParams": {
         "category": "{{ settings.category }}",
         "collection": "{{ settings.collection }}",
-        "pageSize": "{{ settings.quantity }}"
+        "pageSize": "{{ settings.quantity }}",
+        "availableOnly": "{{ true }}"
       },
       "bindTo": "products@vtex"
     }

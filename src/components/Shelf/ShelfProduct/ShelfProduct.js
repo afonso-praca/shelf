@@ -51,10 +51,22 @@ class Product extends React.Component {
   render() {
     const { imageSize } = this.state;
     const defaultSku = this.props.skus[0];
+    const skus = this.props.skus;
     const name = this.props.name;
     const imageUrl = defaultSku.images.length > 0 ?
       defaultSku.images[0].src : 'http://placehold.it/200x235';
-    const price = defaultSku.offers[0].price;
+
+    let price = defaultSku.offers[0].price
+    if (price === 0) {
+      for (var sku of skus) {
+        for (var offer of sku.offers) {
+          if (offer.availability > 0 && offer.price > 0) {
+            price = offer.price;
+            break;
+          }
+        }
+      }
+    }
 
     return (
       <div className="ShelfProduct">
