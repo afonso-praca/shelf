@@ -27,8 +27,9 @@ class ShelfSlider extends React.Component {
     const location = stores.ContextStore.getState().get('location');
     const currentURL = location.pathname + location.search;
     const query = getSearchParams(props.settings);
+    const availableQuery = query.set('availableOnly', true);
     const searchStore = stores.SearchStore.getState();
-    const results = searchStore.getIn([query, 'results']);
+    const results = searchStore.getIn([availableQuery, 'results']);
     let productsIds = searchStore.getIn([currentURL, props.id, 'results']);
 
     productsIds = results ? results : productsIds;
@@ -41,13 +42,14 @@ class ShelfSlider extends React.Component {
 
   componentDidMount() {
     const query = getSearchParams(this.props.settings);
+    const availableQuery = query.set('availableOnly', true);
     const searchStore = stores.SearchStore.getState();
-    const loading = searchStore.getIn([query, 'loading']);
+    const loading = searchStore.getIn([availableQuery, 'loading']);
 
     if (!loading) {
-      const results = searchStore.getIn([query, 'results']);
+      const results = searchStore.getIn([availableQuery, 'results']);
       if (!results) {
-        setTimeout(() => actions.SearchActions.requestSearch(query));
+        setTimeout(() => actions.SearchActions.requestSearch(availableQuery));
       }
     }
   }
