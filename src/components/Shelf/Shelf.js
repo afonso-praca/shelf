@@ -12,8 +12,8 @@ import ShelfSlider from './ShelfSlider/ShelfSlider';
 class Shelf extends React.Component {
   render() {
     return !this.props.settings
-        ? <ShelfPlaceholder title="Destaques"/>
-        : <ShelfSlider {...this.props}/>
+        ? <div className="Shelf"><ShelfPlaceholder title="Destaques"/></div>
+        : <div className="Shelf"><ShelfSlider {...this.props}/></div>
   }
 }
 

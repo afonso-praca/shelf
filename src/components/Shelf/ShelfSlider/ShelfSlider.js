@@ -27,9 +27,8 @@ class ShelfSlider extends React.Component {
     const location = stores.ContextStore.getState().get('location');
     const currentURL = location.pathname + location.search;
     const query = getSearchParams(props.settings);
-    const availableQuery = query.set('availableOnly', true);
     const searchStore = stores.SearchStore.getState();
-    const results = searchStore.getIn([availableQuery, 'results']);
+    const results = searchStore.getIn([query, 'results']);
     let productsIds = searchStore.getIn([currentURL, props.id, 'results']);
 
     productsIds = results ? results : productsIds;
@@ -42,14 +41,13 @@ class ShelfSlider extends React.Component {
 
   componentDidMount() {
     const query = getSearchParams(this.props.settings);
-    const availableQuery = query.set('availableOnly', true);
     const searchStore = stores.SearchStore.getState();
-    const loading = searchStore.getIn([availableQuery, 'loading']);
+    const loading = searchStore.getIn([query, 'loading']);
 
     if (!loading) {
-      const results = searchStore.getIn([availableQuery, 'results']);
+      const results = searchStore.getIn([query, 'results']);
       if (!results) {
-        setTimeout(() => actions.SearchActions.requestSearch(availableQuery));
+        setTimeout(() => actions.SearchActions.requestSearch(query));
       }
     }
   }
@@ -109,7 +107,7 @@ class ShelfSlider extends React.Component {
     };
 
     return (
-      <div>
+      <div className="ShelfSlider">
         <div className="ShelfSlider__section clearfix">
           {
             title ? (
@@ -118,7 +116,7 @@ class ShelfSlider extends React.Component {
           }
           <div className="ShelfSlider__section-link pull-left">{link}</div>
         </div>
-        <div className="ShelfSlider clearfix">
+        <div className="ShelfSlider__slider clearfix">
           <div className="row-fluid">
             <Slider {...slickSettings}>
               {
@@ -135,6 +133,7 @@ class ShelfSlider extends React.Component {
             </Slider>
           </div>
         </div>
+        <hr className="ShelfSlider__separator" />
       </div>
     );
   }
